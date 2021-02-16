@@ -18,19 +18,20 @@ import ast
 from time import sleep
 
 path = 'D:/ISP/14. 프로젝트/대구 빅데이터/데이터/지번_건물명데이터/'
-save_file_name = 'data_신당동.csv'
+save_file_name = 'data_신당동_2.csv'
 
 #%% 대상 구역 지정
 loc_list = pd.read_csv(path + '대구.csv', dtype={'시군구코드': str, '법정동코드': str, '번': str, '지': str})
 idx = (loc_list['시군구코드']=='27290').values * (loc_list['법정동코드'] >= '10400').values * (loc_list['법정동코드'] <= '10700').values
 loc_list = loc_list.iloc[idx,:].reset_index(drop = True)
 loc_len = loc_list.shape[0]
-#
-# # 지가
+
+## 지가
 jiga_list = loc_list.copy()
 jiga_list['gosi_year'], jiga_list['gosi_month'], jiga_list['jiga'], jiga_list['loc_x'], jiga_list['loc_y'] \
         = [''] * loc_len, [''] * loc_len, [''] * loc_len, [''] * loc_len, [''] * loc_len
-# 용도
+
+## 용도
 yongdo_list = loc_list.copy()
 item_list1 = pd.read_excel(path + '1. 좌표_용도지역/표제부.xlsx')
 for item in item_list1['item'].values:
@@ -38,8 +39,8 @@ for item in item_list1['item'].values:
 item_list2 = pd.read_excel(path + '1. 좌표_용도지역/지역지구.xlsx')
 for item in item_list2['item'].values:
     yongdo_list[item] = [''] * loc_len
-#
-# # 에너지
+
+## 에너지
 building_energy_list = loc_list.copy()
 building_energy_list['Power'], building_energy_list['Gas'] \
         = [''] * loc_len, [''] * loc_len
@@ -55,7 +56,7 @@ def Filtering_data(data_contents):
         value = 0
     return(value)
 
-for i in range(2524, loc_len):
+for i in range(loc_len):
     ##################### 지가 #####################
     service_key = "64C994B5-0D66-3873-B944-C4B2B56256AF"
     domain = "http:// http://api.vworld.kr/req/data"
@@ -122,8 +123,8 @@ for i in range(2524, loc_len):
             yongdo_list.loc[i, item] = val
 
     ##################### 에너지 #####################
-    # service_key = "xuUwX9IzFsaeNti4Fq9%2Banwxl6Aue2IUyiAVrR2188EZdCj8sqgOPRhgl6zWt0WmzH1aVqmFldSnu1Yq%2Bqzgcw%3D%3D"
-    service_key = 'PRGaiqrEJbWS%2FZU1AsNxFXk4HHYxG7WXPHp%2BWI3F6nu7EaqlvzRerwUEwZIcmvSwOyW65tOTjYUckpwPaP143Q%3D%3D'
+    service_key = "xuUwX9IzFsaeNti4Fq9%2Banwxl6Aue2IUyiAVrR2188EZdCj8sqgOPRhgl6zWt0WmzH1aVqmFldSnu1Yq%2Bqzgcw%3D%3D"
+    # service_key = 'PRGaiqrEJbWS%2FZU1AsNxFXk4HHYxG7WXPHp%2BWI3F6nu7EaqlvzRerwUEwZIcmvSwOyW65tOTjYUckpwPaP143Q%3D%3D'
     useYm = '201912'
 
     url_power = "http://apis.data.go.kr/1611000/BldEngyService/getBeElctyUsgInfo?sigunguCd=" + sigunguCd + "&bjdongCd=" + bjdongCd + "&bun=" + bun + "&ji=" + ji + "&useYm=" + useYm + "&ServiceKey=" + service_key
