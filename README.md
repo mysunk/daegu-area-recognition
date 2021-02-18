@@ -1,6 +1,6 @@
 Best Use Recommendation Model for Undesignated and Unsubdivided Areas
 =======================================
-### 2nd Daegu bigdata contest  
+### 제2회 대구 빅데이터 경진대회  
 Notification: [link](https://www.dip.or.kr/home/notice/boardRead.ubs?sfpsize=20&sfcategory=&fboardcd=notice&sfclassification=&sfkind=&sfsearch=ftitle&sfkeyword=%EB%8C%80%EA%B5%AC+%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0&fboardnum=4628&sfpage=1)
 
 ### __Structure__
@@ -71,7 +71,9 @@ GUI Dashboard
 
 Prize
 =======================
-Got the Encouragement prize   
+Got the Encouragement prize
+![prize](img/대구.jpg)   
+
 
 Contact
 ==================
