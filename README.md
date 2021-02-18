@@ -70,9 +70,9 @@ GUI Dashboard
 * By using dimensionality reduction method such as 
 
 Prize
-=======================
-Got the Encouragement prize
-![prize](img/대구.jpg)   
+=======================  
+![prize](img/대구.jpg)  
+Got the Encouragement prize 
 
 
 Contact
