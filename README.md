@@ -3,6 +3,14 @@ Best Use Recommendation Model for Undesignated and Unsubdivided Areas
 ### 제2회 대구 빅데이터 경진대회  
 Notification: [link](https://www.dip.or.kr/home/notice/boardRead.ubs?sfpsize=20&sfcategory=&fboardcd=notice&sfclassification=&sfkind=&sfsearch=ftitle&sfkeyword=%EB%8C%80%EA%B5%AC+%EB%B9%85%EB%8D%B0%EC%9D%B4%ED%84%B0&fboardnum=4628&sfpage=1)
 
+### __Context__
+* [Introduction](#introduction)
+* [Dataset](#dataset)
+* [Methodology](#methodology)
+* [Result](#result)
+* [GUI Dashboard](#gui-dashboard)
+* [Prize](#prize)
+
 ### __Structure__
 The structure of the project is as follows.
 ```setup
@@ -18,14 +26,6 @@ The structure of the project is as follows.
 * plot-figs.py: plot the result of correlation and importance score
 * API-request.py: request data from https://www.data.go.kr/
 * presentation: presentation files
-
-### __Context__
-* [Introduction](#introduction)
-* [Dataset](#dataset)
-* [Methodology](#methodology)
-* [Result](#result)
-* [GUI Dashboard](#gui-dashboard)
-* [Prize](#prize)
 
 Introduction
 =======================
